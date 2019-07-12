@@ -60,6 +60,7 @@ io.on("connection", socket => {
     }
 
     io.to(user.room).emit("message", generateMessage(message, user.username));
+    callback();
   });
 
   socket.on("sendLocation", ({ latitude, longitude }, callback) => {
